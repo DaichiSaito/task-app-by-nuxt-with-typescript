@@ -35,6 +35,7 @@ export default class TaskForm extends Vue {
     this.isVisible = true
   };
   close() {
+    this.task = {}
     this.isVisible = false
   };
   @Emit("createTask")
