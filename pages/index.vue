@@ -1,7 +1,6 @@
 <template>
-  <div class="container">
+  <div class="home-container">
     <div>
-      <logo />
       <h1 class="title">
         ts-task-app
       </h1>
@@ -9,20 +8,7 @@
         My rad Nuxt.js project
       </h2>
       <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+        <nuxt-link to="/tasks"><v-btn color="primary">はじめる</v-btn></nuxt-link>
       </div>
     </div>
   </div>
@@ -30,18 +16,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Logo from '~/components/Logo.vue'
 
-@Component({
-  components: {
-    Logo
-  }
-})
 export default class Home extends Vue {}
 </script>
 
 <style>
-.container {
+.home-container {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
