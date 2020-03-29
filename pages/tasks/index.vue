@@ -34,7 +34,7 @@ export default class TaskIndex extends Vue {
   };
   createTask(task: Object) {
     const newTask = new Task(this.tasks.length + 1, task.title)
-    this.tasks.push(newTask)
+    this.tasks.unshift(newTask)
     this.addTaskModal.close()
   }
 }
