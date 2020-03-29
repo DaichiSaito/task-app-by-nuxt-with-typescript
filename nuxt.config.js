@@ -43,6 +43,7 @@ export default {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    '@nuxtjs/vuetify'
   ],
   /*
   ** Axios module configuration
