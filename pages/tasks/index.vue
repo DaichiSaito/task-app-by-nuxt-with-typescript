@@ -16,6 +16,7 @@
 
 <script lang="ts">
 import { Component, Ref, Vue } from 'vue-property-decorator'
+import { IRegistrationParams } from '@/boundary/books/InOutType'
 import TaskItem from '@/components/tasks/TaskItem.vue'
 import TaskForm from '@/components/tasks/TaskForm.vue'
 import Task from '@/models/task'
@@ -26,14 +27,17 @@ import Task from '@/models/task'
   }
 })
 export default class TaskIndex extends Vue {
-  tasks: Array<Task> = [new Task(1, "title1"), new Task(2, "title2"), new Task(3, "title3")];
+  tasks: Array<Task> = [new Task(1, "title1", new Date(), new Date()), new Task(2, "title2", new Date(), new Date()), new Task(3, "title3", new Date(), new Date())];
   dialog: Boolean = false;
   @Ref() addTaskModal!: TaskForm;
   openAddTaskModal() {
     this.addTaskModal.open()
   };
-  createTask(task: Object) {
-    const newTask = new Task(this.tasks.length + 1, task.title)
+  createTask(task: IRegistrationParams) {
+    // 実際はここで通信
+    // task.titleでタイトルの入力値が取ってこれるのでそれをapi通信に乗せてやればOK
+    // レスポンスを利用してTaskをnewしてtasksに追加してやる
+    const newTask = new Task(this.tasks.length + 1, task.title, new Date(), new Date())
     this.tasks.unshift(newTask)
     this.addTaskModal.close()
   }

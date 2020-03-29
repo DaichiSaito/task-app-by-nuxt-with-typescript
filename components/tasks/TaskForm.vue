@@ -25,21 +25,22 @@
 
 <script lang="ts">
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
+import { IRegistrationParams } from '@/boundary/books/InOutType'
 import Task from '@/models/task'
 
 @Component
 export default class TaskForm extends Vue {
-  task = {};
+  task: IRegistrationParams  = { title: '' };
   isVisible = false
   open() {
     this.isVisible = true
   };
   close() {
-    this.task = {}
+    this.task = { title: '' }
     this.isVisible = false
   };
   @Emit("createTask")
-  createTask(): Object {
+  createTask(): IRegistrationParams {
     return this.task
   };
 }
