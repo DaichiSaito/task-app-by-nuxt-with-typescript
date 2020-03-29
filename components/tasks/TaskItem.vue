@@ -39,6 +39,6 @@ import Task from '@/models/task'
 @Component
 export default class TaskItem extends Vue {
   @Prop({ type: Object, required: true })
-  task: Task;
+  task!: Task;
 }
 </script>

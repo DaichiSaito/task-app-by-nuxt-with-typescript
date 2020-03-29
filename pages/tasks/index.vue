@@ -28,7 +28,7 @@ import Task from '@/models/task'
 export default class TaskIndex extends Vue {
   tasks: Array<Task> = [new Task(1, "title1"), new Task(2, "title2"), new Task(3, "title3")];
   dialog: Boolean = false;
-  @Ref() addTaskModal: TaskForm;
+  @Ref() addTaskModal!: TaskForm;
   openAddTaskModal() {
     this.addTaskModal.open()
   };
