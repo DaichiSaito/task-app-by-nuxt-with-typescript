@@ -29,14 +29,15 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import Logo from '~/components/Logo.vue'
+import { Component, Vue } from 'vue-property-decorator';
+import Logo from '~/components/Logo.vue';
 
-export default Vue.extend({
+@Component({
   components: {
     Logo
   }
 })
+export default class Home extends Vue {}
 </script>
 
 <style>
